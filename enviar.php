@@ -13,7 +13,7 @@ $carta .= "Correo: $correo \n";
 $carta .= "Mensaje: $mensaje";
 
 //Enviando Mensaje
-@mail($destinatario, $asunto, $carta);
+mail($destinatario, $asunto, $carta);
 header('Location: mensaje_exitoso.html');
-//header('Location:English/message.html')
+header('Location: English/message.html');
  ?>
