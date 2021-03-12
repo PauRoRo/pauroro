@@ -12,6 +12,8 @@ $cabecerasCliente .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 $cabecerasCliente .= 'From: Bogota Colombia<paulina2807g@gmail.com>';
 $enviadoCliente   = mail($paraCliente, $tituloCliente, $mensajeCliente, $cabecerasCliente);
 
-header('Location:mensaje_exitoso.html');
+echo "<script>
+    window.location='https://pauroro.com/español.html#contacto/mensaje_exitoso.html';
+</script>";
 
 ?>
