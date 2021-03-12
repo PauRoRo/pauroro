@@ -16,6 +16,7 @@ $carta .= "Mensaje: $mensaje";
 
 //Enviando Mensaje
 mail($destinatario, $asunto, $carta);
+echo "<h3> CORREO ENVIADO </h3>";
 header('Location: mensaje_exitoso.html')
 //header('Location: English/message.html');
  ?>
