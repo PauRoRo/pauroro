@@ -7,7 +7,8 @@ $correo = $_POST['correo'];
 $mensaje = $_POST['mensaje'];
 
 // Datos para el Correo
-$destinatario = "paulina2807@hotmail.com";
+//$destinatario = "paulina2807@hotmail.com";
+$destinatario = "valerielucia0@gmail.com";
 $asunto = "Contacto desde web Paula";
 
 $carta = "De: $nombre \n";
@@ -16,7 +17,6 @@ $carta .= "Mensaje: $mensaje";
 
 //Enviando Mensaje
 mail($destinatario, $asunto, $carta);
-echo "<h3> CORREO ENVIADO </h3>";
 header('Location: mensaje_exitoso.html')
 //header('Location: English/message.html');
  ?>
