@@ -16,7 +16,7 @@ $carta .= "Mensaje: $mensaje";
 // mail($to, $asunto, $carta);
 // header('Location:mensaje_exitoso.html');
 // header('Location:English/message.html')
-if($email!=NULL){
+if($correo!=NULL){
     mail($to,$asunto,$carta);
 }
 //redirect
