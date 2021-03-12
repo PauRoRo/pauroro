@@ -14,14 +14,9 @@ $carta = "De: $nombre \n";
 $carta .= "Correo: $correo \n";
 $carta .= "Mensaje: $mensaje";
 
-$host = $_SERVER['HTTP_HOST'];
-$ruta = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-$html = 'mensaje_exitoso.html';
-$url = "http://$host$ruta/$html";
-
 //Enviando Mensaje
 mail($destinatario, $asunto, $carta);
-header("Location: $url");
-//header('Location: mensaje_exitoso.html')
+header("Location: /mensaje_exitoso.html",TRUE,301);
+//header('Location: mensaje_exitoso.html');
 //header('Location: English/message.html');
  ?>
