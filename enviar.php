@@ -1,20 +1,19 @@
 <?php
-ob_start(); // needs to be added here
-// Llamando a los campos
-$nombre = $_POST['nombre'];
-$correo = $_POST['correo'];
-$mensaje = $_POST['mensaje'];
+//get data from form  
+$name = $_POST['nombre'];
+$email= $_POST['correo'];
+$message= $_POST['mensaje'];
 
-// Datos para el Correo
-$destinatario = "paulina2807@hotmail.com";
-$asunto = "Contacto desde web Paula";
+$to =  "paulina2807@hotmail.com";
 
-$carta = "De: $nombre \n";
-$carta .= "Correo: $correo \n";
-$carta .= "Mensaje: $mensaje";
+$subject = "Contacto desde web Paula";
 
-//Enviando Mensaje
-mail($destinatario, $asunto, $carta);
-header('Location:mensaje_exitoso.html');
-//header('Location: English/message.html');
- ?>
+$txt ="Name = ". $name . "\r\n  Email = " . $email . "\r\n Message =" . $message;
+$headers = "From: paulina2807@hotmail.com" . "\r\n" .
+"CC: somebodyelse@example.com";
+if($email!=NULL){
+    mail($to,$subject,$txt,$headers);
+}
+//redirect
+header("Location:mensaje_exitoso.html");
+?>
