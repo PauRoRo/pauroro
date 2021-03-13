@@ -190,6 +190,8 @@
   display: block;
 }
 .image-column {
+  width: auto;
+  height: auto;
   padding: 3% 2%;
 }
 .img-port{
