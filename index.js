@@ -61,5 +61,5 @@ $("#Limpiar").click(function(event) {
 
 setTimeout (function() {
  $("#formreset")[0].reset();
-}, 1000);
+}, 800);
    });
