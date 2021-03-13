@@ -1,19 +1,42 @@
 <?php
-$nombreCliente = $_POST['nombre'];
-$emailCliente  = $_POST['Correo'];
-$msjCliente    = $_POST['mensaje'];
 
-$paraCliente    = $emailCliente;
-$tituloCliente  = "Mi Formulario de Contacto..";
-$mensajeCliente = "<html>".
+/**
+ * SCRIPT PARA ENVIAR CORREOS DESDE PHP
+ * 
+ * Script sencillo para enviar datos de un formulario
+ * por correo mediante MAIL de PHP
+ 
+ 
+if(isset($_POST['submit'])){
 
-$cabecerasCliente  = 'MIME-Version: 1.0' . "\r\n";
-$cabecerasCliente .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-$cabecerasCliente .= 'From: Bogota Colombia<paulina2807g@gmail.com>';
-$enviadoCliente   = mail($paraCliente, $tituloCliente, $mensajeCliente, $cabecerasCliente);
+  $nombre = htmlspecialchars($_POST['nombre']);
+	$correo = htmlspecialchars($_POST['correo']);
+	$comentarios = htmlspecialchars($_POST['mensaje']);
+	
+	$subject = "Formulario de contacto de PAGINA WEB PAULA";
+	$para = "paulina2807G@gmail.com";
+	$de = "paulina2807G@gmail.com";
+	$mensaje = "Alguien ha enviado un formulario.";
+	$mensaje .= "\n";
+	$mensaje .= "Aquí están los datos: ";
+	$mensaje .= "\n\n";
+	$mensaje .= "Nombre: ".$nombre."\n";
+	$mensaje .= "Correo: ".$correo."\n";
+	$mensaje .= "Comentarios: ".$mensaje."\n\n";
+	$mensaje .= "----------------------\n";
+	$mensaje .= "Guarde este correo para futuras revisiones.";
+	
+	if(mail($para, $subject,$mensaje,"From: $de")){
+		header("Location: mensaje_exitoso.html");
+		exit();
+	}
+	
+	// fin
 
-echo "<script>
-    window.location='https://pauroro.com/español.html#contacto/mensaje_exitoso.html';
-</script>";
+} else {
+
+	echo "No se ha enviado ningún form";
+
+}
 
 ?>
