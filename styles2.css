@@ -196,6 +196,9 @@
   border-radius: 10px;
   border: 0;
 }
+.img-port2{
+  height: 50%;
+}
 .letra-proyecto {
   text-align: center;
     font-family: 'Poppins', sans-serif;
