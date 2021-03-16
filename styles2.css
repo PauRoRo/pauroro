@@ -197,7 +197,7 @@
   border: 0;
 }
 .img-port2{
-  height: 50%;
+  max-height: 300px;
 }
 .letra-proyecto {
   text-align: center;
